@@ -7,9 +7,10 @@ router.get("/get", async (req, res) => {
   res.json(result);
 });
 router.post("/add", (req, res) => {
-  const { name, img, price, stock, detail } = req.body;
+  const { username ,name, img, price, stock, detail } = req.body;
   const newProduct = new Product({
     name,
+    username,
     img,
     price,
     stock,
@@ -22,4 +23,5 @@ router.post("/add", (req, res) => {
     })
     .catch((err) => console.log(err));
 });
+
 module.exports = router;
